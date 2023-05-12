@@ -18,97 +18,105 @@ try:
     operation = input("Which operation ('addition', 'subtraction', 'multiplication' or 'division') would you like to use? ")
 except ValueError:
     print(BOLD + RED + "Sorry! Only strings are allowed"+ END )
+    BORDER
     
 if operation.lower() != 'addition' and operation.lower() != 'subtraction' and operation.lower() != 'multiplication' and operation.lower() != 'division':
     raise Exception(BOLD + RED +"Please only enter the qouted words among the choices."+ END)
+
 
 print('\n')
 #Ask the user to enter two (2) numbers.
 
 if operation.lower() == 'addition':
-    print(BOLD+BLUE+"Enter your first number:"+END)
+    
     try:
-            input1 = input(" ")
-        
-    except ValueError:
-        print('\n')
-        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-    print(BOLD+BLUE+"Enter your second number:"+END)
-    try:
+        print(BOLD+BLUE+"Enter your first number:"+END)
+        input1 = input(" ")
+           
+        print(BOLD+BLUE+"Enter your second number:"+END)
         input2 = input(" ")
-        
+        result = float(input1) + float(input2)
+    
     except ValueError:
         print('\n')
         print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-    result = float(input1) + float(input2)
+
+    except TypeError:
+        print('\n')
+        print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
+
     result = "%.3f"%result
+    result = input1 ,"+",input2,"=", result
     print('\n')
-    print(input1 ,"+",input2,"=", result)
+    print(result)
 
 elif operation.lower() == 'subtraction':
     print(BOLD+BLUE+"Enter your first number:"+END)
     try:
+        print(BOLD+BLUE+"Enter your first number:"+END)
         input1 = input(" ")
-        
-    except ValueError:
-        print('\n')
-        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-    print(BOLD+BLUE+"Enter your second number:"+END)
-    try:
+           
+        print(BOLD+BLUE+"Enter your second number:"+END)
         input2 = input(" ")
-        
+        result = float(input1) - float(input2)
+    
     except ValueError:
         print('\n')
         print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+
+    except TypeError:
+        print('\n')
+        print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
     
-    result = float(input1) - float(input2)
     result = "%.3f"%result
+    result = input1 ,"-",input2,"=", result
     print('\n')
-    print(input1 ,"-",input2,"=", result)
+    print(result)
    
 
 elif operation.lower() == 'multiplication':
-    print(BOLD+BLUE+"Enter your first number:"+END)
     try:
+        print(BOLD+BLUE+"Enter your first number:"+END)
         input1 = input(" ")
-        
-    except ValueError:
-        print('\n')
-        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-
-    print(BOLD+BLUE+"Enter your second number:"+END)
-    try:
+           
+        print(BOLD+BLUE+"Enter your second number:"+END)
         input2 = input(" ")
-        
+        result = float(input1) * float(input2)
+    
     except ValueError:
         print('\n')
         print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
 
-    result = float(input1) * int(input2)
+    except TypeError:
+        print('\n')
+        print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
+
     result = "%.3f"%result
+    result = input1 ,"/",input2,"=", result
     print('\n')
-    print(input1 ,"x",input2,"=", result)
+    print(result)
 
 if operation.lower() == 'division':
-    print(BOLD+BLUE+"Enter your first number:"+END)
     try:
+        print(BOLD+BLUE+"Enter your first number:"+END)
         input1 = input(" ")
-        
+           
+        print(BOLD+BLUE+"Enter your second number:"+END)
+        input2 = input(" ")
+        result = float(input1) / float(input2)
+    
     except ValueError:
         print('\n')
         print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
 
-    print(BOLD+BLUE+"Enter your second number:"+END)
-    try:
-        input2 = input(" ")
-        
-    except ValueError:
+    except TypeError:
         print('\n')
-        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-    result = float(input1) / float(input2)
+        print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
+
     result = "%.3f"%result
+    result = input1 ,"/",input2,"=", result
     print('\n')
-    print(input1 ,"/",input2,"=", result)
+    print(result)
 
 print('\n')
 print(BOLD+PURPLE+BORDER+END)
@@ -117,7 +125,7 @@ print('\n')
 try:
     response = input("Would you like to repeat the process? Type'yes' to proceed, enter 'no' if not.")
 
-except ValueError:
+except TypeError:
     print('\n')
     print(BOLD + RED + "Sorry! Only strings are allowed"+ END )
 
@@ -140,95 +148,95 @@ while response.lower() == 'yes':
 
 
     if operation.lower() == 'addition':
-        print(BOLD+BLUE+"Enter your first number:"+END)
         try:
+            print(BOLD+BLUE+"Enter your first number:"+END)
             input1 = input(" ")
-        
-        except ValueError:
-            print('\n')
-            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-        
-        
-        print(BOLD+BLUE+"Enter your second number:"+END)
-        try:
+           
+            print(BOLD+BLUE+"Enter your second number:"+END)
             input2 = input(" ")
-        
+            result = float(input1) + float(input2)
+    
         except ValueError:
             print('\n')
             print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-        result = float(input1) + float(input2)
+
+        except TypeError:
+            print('\n')
+            print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
+
         result = "%.3f"%result
+        result = input1 ,"+",input2,"=", result
         print('\n')
-        print(BOLD + input1 ,"+",input2,"=", result + END)
+        print(result)
         
 
     elif operation.lower() == 'subtraction':
-        print(BOLD+BLUE+"Enter your first number:"+END)
         try:
+            print(BOLD+BLUE+"Enter your first number:"+END)
             input1 = input(" ")
-        
-        except ValueError:
-            print('\n')
-            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-        print(BOLD+BLUE+"Enter your second number:"+END)
-        try:
+           
+            print(BOLD+BLUE+"Enter your second number:"+END)
             input2 = input(" ")
-        
+            result = float(input1) - float(input2)
+    
         except ValueError:
             print('\n')
             print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-        result = float(input1) - float(input2)
+        
+        except TypeError:
+            print('\n')
+            print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
+    
         result = "%.3f"%result
+        result = input1 ,"-",input2,"=", result
         print('\n')
-        print(BOLD + (input1 ,"-",input2,"=", result) + END)
+        print(result)
         
 
     elif operation.lower() == 'multiplication':
-        print(BOLD+BLUE+"Enter your first number:"+END)
         try:
+            print(BOLD+BLUE+"Enter your first number:"+END)
             input1 = input(" ")
-        
-        except ValueError:
-            print('\n')
-            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-
-        print(BOLD+BLUE+"Enter your second number:"+END)
-        try:
+           
+            print(BOLD+BLUE+"Enter your second number:"+END)
             input2 = input(" ")
-        
+            result = float(input1) * float(input2)
+    
         except ValueError:
             print('\n')
             print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
         
-        except ValueError:
+        except TypeError:
             print('\n')
-            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-        
-        result = float(input1) * float(input2)
+            print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
+    
         result = "%.3f"%result
+        result = input1 ,"x",input2,"=", result
         print('\n')
-        print(input1 ,"x",input2,"=", result)
+        print(result)
 
     if operation.lower() == 'division':
-        print(BOLD+BLUE+"Enter your first number:"+END)
         try:
+            print(BOLD+BLUE+"Enter your first number:"+END)
             input1 = input(" ")
-        
-        except ValueError:
-            print('\n')
-            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
-        print(BOLD+BLUE+"Enter your second number:"+END)
-        try:
+           
+            print(BOLD+BLUE+"Enter your second number:"+END)
             input2 = input(" ")
-        
+            result = float(input1) / float(input2)
+    
         except ValueError:
             print('\n')
             print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
         
-        result = float(input1) / float(input2)
+        except TypeError:
+            print('\n')
+            print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
+        
+
         result = "%.3f"%result
+        result = input1 ,"/",input2,"=", result
         print('\n')
-        print(input1 ,"/",input2,"=", result)   
+        print(result)   
     
     response = input("Would you like to repeat the process? Type'yes' to proceed, enter 'no' if not.")
     response.lower()
@@ -239,10 +247,13 @@ while response.lower() == 'yes':
     
 
     if response.lower() == 'no':
-        print("End program")
+        print("End of program")
         
 if response.lower() == 'no':
-    print("End program")
+    print("End of program")
+
+if response.lower() != 'yes' and response.lower() != 'no':
+    raise Exception(BOLD + RED +"Please only enter the qouted words among the choices."+ END)
 
 
 
