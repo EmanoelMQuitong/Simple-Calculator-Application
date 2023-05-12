@@ -10,7 +10,7 @@ END = '\033[0m'
 #Ask the user which operations will be used.
 print('\n')
 ch = '#'
-BORDER = ch*200
+BORDER = ch*190
 print(BOLD+PURPLE+BORDER+END)
 print('\n')
 
@@ -46,9 +46,11 @@ if operation.lower() == 'addition':
         print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
 
     result = "%.3f"%result
-    result = input1 ,"+",input2,"=", result
     print('\n')
-    print(result)
+    print(str(input1) ,"+", str(input2),"=", result)
+    history = open('History.txt', 'a')
+    history.write(input1),history.write(' + '), history.write(input2), history.write(' = '), history.write(result), history.write('\n')
+
 
 elif operation.lower() == 'subtraction':
     print(BOLD+BLUE+"Enter your first number:"+END)
@@ -69,9 +71,11 @@ elif operation.lower() == 'subtraction':
         print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
     
     result = "%.3f"%result
-    result = input1 ,"-",input2,"=", result
     print('\n')
-    print(result)
+    print(str(input1) ,"-", str(input2),"=", result)
+    history = open('History.txt', 'a')
+    history.write(input1),history.write(' - '), history.write(input2), history.write(' = '), history.write(result), history.write('\n')
+
    
 
 elif operation.lower() == 'multiplication':
@@ -92,9 +96,11 @@ elif operation.lower() == 'multiplication':
         print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
 
     result = "%.3f"%result
-    result = input1 ,"/",input2,"=", result
     print('\n')
-    print(result)
+    print(str(input1) ,"x", str(input2),"=", result)
+    history = open('History.txt', 'a')
+    history.write(input1),history.write(' x '), history.write(input2), history.write(' = '), history.write(result), history.write('\n')
+
 
 if operation.lower() == 'division':
     try:
@@ -114,9 +120,14 @@ if operation.lower() == 'division':
         print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
 
     result = "%.3f"%result
-    result = input1 ,"/",input2,"=", result
     print('\n')
-    print(result)
+    print(str(input1) ,"/", str(input2),"=", result)
+    history = open('History.txt', 'a')
+    history.write(input1),history.write(' / '), history.write(input2), history.write(' = '), history.write(result), history.write('\n')
+
+
+history = open('History.txt', 'a')
+history.write(input1),history.write(' + '), history.write(input2), history.write(' = '), history.write(result), history.write('\n')
 
 print('\n')
 print(BOLD+PURPLE+BORDER+END)
@@ -165,9 +176,11 @@ while response.lower() == 'yes':
             print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
 
         result = "%.3f"%result
-        result = input1 ,"+",input2,"=", result
         print('\n')
-        print(result)
+        print(str(input1) ,"+", str(input2),"=", result)
+        history = open('History.txt', 'a')
+        history.write(input1),history.write(' - '), history.write(input2), history.write(' = '), history.write(result), history.write('\n')
+
         
 
     elif operation.lower() == 'subtraction':
@@ -188,9 +201,11 @@ while response.lower() == 'yes':
             print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
     
         result = "%.3f"%result
-        result = input1 ,"-",input2,"=", result
         print('\n')
-        print(result)
+        print(str(input1) ,"-", str(input2),"=", result)
+        history = open('History.txt', 'a')
+        history.write(input1),history.write(' - '), history.write(input2), history.write(' = '), history.write(result), history.write('\n')
+
         
 
     elif operation.lower() == 'multiplication':
@@ -210,10 +225,12 @@ while response.lower() == 'yes':
             print('\n')
             print(BOLD + RED + "Non-integer and non-float are cannot be used."+ END )
     
-        result = "%.3f"%result
-        result = input1 ,"x",input2,"=", result
+        result = "%.3f"%result 
         print('\n')
-        print(result)
+        print(str(input1) ,"x", str(input2),"=", result)
+        history = open('History.txt', 'a')
+        history.write(input1),history.write(' x '), history.write(input2), history.write(' = '), history.write(result), history.write('\n')
+
 
     if operation.lower() == 'division':
         try:
@@ -234,10 +251,12 @@ while response.lower() == 'yes':
         
 
         result = "%.3f"%result
-        result = input1 ,"/",input2,"=", result
         print('\n')
-        print(result)   
-    
+        print(str(input1) ,"/", str(input2),"=",result)
+        history = open('History.txt', 'a')
+        history.write(input1),history.write(' / '), history.write(input2), history.write(' = '), history.write(result), history.write('\n')
+   
+    print('\n')
     response = input("Would you like to repeat the process? Type'yes' to proceed, enter 'no' if not.")
     response.lower()
 
@@ -247,10 +266,15 @@ while response.lower() == 'yes':
     
 
     if response.lower() == 'no':
-        print("End of program")
-        
+        print(GREEN+"End of program")
+        history.close()
+    if response.lower() != 'yes' and response.lower() != 'no':
+        raise Exception(BOLD + RED +"Please only enter the qouted words among the choices."+ END) 
+    
+
 if response.lower() == 'no':
-    print("End of program")
+    print(GREEN+"End of program")
+    history.close()
 
 if response.lower() != 'yes' and response.lower() != 'no':
     raise Exception(BOLD + RED +"Please only enter the qouted words among the choices."+ END)
