@@ -77,8 +77,13 @@ response.lower()
 #Ask the user if they want to repeat the process
 while response.lower() == 'yes':
     print('\n')
-    operation = input("Which operation ('addition', 'subtraction', 'multiplication' or 'division') would you like to use? ")
-    operation.lower()
+    try:
+        operation = input("Which operation ('addition', 'subtraction', 'multiplication' or 'division') would you like to use? ")
+    except ValueError:
+        print(BOLD + RED + "Sorry! Only strings are allowed"+ END )
+    
+    if operation.lower() != 'addition' and operation.lower() != 'subtraction' and operation.lower() != 'multiplication' and operation.lower() != 'division':
+        raise Exception(BOLD + RED +"Please only enter the qouted words among the choices."+ END)
 
     print('\n')
 
