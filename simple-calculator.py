@@ -27,9 +27,19 @@ print('\n')
 
 if operation.lower() == 'addition':
     print(BOLD+BLUE+"Enter your first number:"+END)
-    input1 = input(" ")
+    try:
+            input1 = input(" ")
+        
+    except ValueError:
+        print('\n')
+        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
     print(BOLD+BLUE+"Enter your second number:"+END)
-    input2 = input(" ")
+    try:
+        input2 = input(" ")
+        
+    except ValueError:
+        print('\n')
+        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
     result = float(input1) + float(input2)
     result = "%.3f"%result
     print('\n')
@@ -37,9 +47,20 @@ if operation.lower() == 'addition':
 
 elif operation.lower() == 'subtraction':
     print(BOLD+BLUE+"Enter your first number:"+END)
-    input1 = input(" ")
+    try:
+        input1 = input(" ")
+        
+    except ValueError:
+        print('\n')
+        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
     print(BOLD+BLUE+"Enter your second number:"+END)
-    input2 = input(" ")
+    try:
+        input2 = input(" ")
+        
+    except ValueError:
+        print('\n')
+        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+    
     result = float(input1) - float(input2)
     result = "%.3f"%result
     print('\n')
@@ -48,9 +69,21 @@ elif operation.lower() == 'subtraction':
 
 elif operation.lower() == 'multiplication':
     print(BOLD+BLUE+"Enter your first number:"+END)
-    input1 = input(" ")
+    try:
+        input1 = input(" ")
+        
+    except ValueError:
+        print('\n')
+        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+
     print(BOLD+BLUE+"Enter your second number:"+END)
-    input2 = input(" ")
+    try:
+        input2 = input(" ")
+        
+    except ValueError:
+        print('\n')
+        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+
     result = float(input1) * int(input2)
     result = "%.3f"%result
     print('\n')
@@ -58,9 +91,20 @@ elif operation.lower() == 'multiplication':
 
 if operation.lower() == 'division':
     print(BOLD+BLUE+"Enter your first number:"+END)
-    input1 = input(" ")
+    try:
+        input1 = input(" ")
+        
+    except ValueError:
+        print('\n')
+        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+
     print(BOLD+BLUE+"Enter your second number:"+END)
-    input2 = input(" ")
+    try:
+        input2 = input(" ")
+        
+    except ValueError:
+        print('\n')
+        print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
     result = float(input1) / float(input2)
     result = "%.3f"%result
     print('\n')
@@ -68,9 +112,16 @@ if operation.lower() == 'division':
 
 print('\n')
 print(BOLD+PURPLE+BORDER+END)
+print('\n')
 
-response = input("Would you like to repeat the process? Type'yes' to proceed, enter 'no' if not.")
-response.lower()
+try:
+    response = input("Would you like to repeat the process? Type'yes' to proceed, enter 'no' if not.")
+
+except ValueError:
+    print('\n')
+    print(BOLD + RED + "Sorry! Only strings are allowed"+ END )
+
+
 
 
 
@@ -90,9 +141,21 @@ while response.lower() == 'yes':
 
     if operation.lower() == 'addition':
         print(BOLD+BLUE+"Enter your first number:"+END)
-        input1 = input(" ")
+        try:
+            input1 = input(" ")
+        
+        except ValueError:
+            print('\n')
+            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+        
+        
         print(BOLD+BLUE+"Enter your second number:"+END)
-        input2 = input(" ")
+        try:
+            input2 = input(" ")
+        
+        except ValueError:
+            print('\n')
+            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
         result = float(input1) + float(input2)
         result = "%.3f"%result
         print('\n')
@@ -101,9 +164,19 @@ while response.lower() == 'yes':
 
     elif operation.lower() == 'subtraction':
         print(BOLD+BLUE+"Enter your first number:"+END)
-        input1 = input(" ")
+        try:
+            input1 = input(" ")
+        
+        except ValueError:
+            print('\n')
+            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
         print(BOLD+BLUE+"Enter your second number:"+END)
-        input2 = input(" ")
+        try:
+            input2 = input(" ")
+        
+        except ValueError:
+            print('\n')
+            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
         result = float(input1) - float(input2)
         result = "%.3f"%result
         print('\n')
@@ -112,9 +185,25 @@ while response.lower() == 'yes':
 
     elif operation.lower() == 'multiplication':
         print(BOLD+BLUE+"Enter your first number:"+END)
-        input1 = input(" ")
+        try:
+            input1 = input(" ")
+        
+        except ValueError:
+            print('\n')
+            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+
         print(BOLD+BLUE+"Enter your second number:"+END)
-        input2 = input(" ")
+        try:
+            input2 = input(" ")
+        
+        except ValueError:
+            print('\n')
+            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+        
+        except ValueError:
+            print('\n')
+            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+        
         result = float(input1) * float(input2)
         result = "%.3f"%result
         print('\n')
@@ -122,9 +211,20 @@ while response.lower() == 'yes':
 
     if operation.lower() == 'division':
         print(BOLD+BLUE+"Enter your first number:"+END)
-        input1 = input(" ")
+        try:
+            input1 = input(" ")
+        
+        except ValueError:
+            print('\n')
+            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
         print(BOLD+BLUE+"Enter your second number:"+END)
-        input2 = input(" ")
+        try:
+            input2 = input(" ")
+        
+        except ValueError:
+            print('\n')
+            print(BOLD + RED + "Sorry! Only integers and floats are allowed"+ END )
+        
         result = float(input1) / float(input2)
         result = "%.3f"%result
         print('\n')
