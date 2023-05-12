@@ -8,6 +8,12 @@ BOLD = '\033[1m'
 END = '\033[0m'
 
 #Ask the user which operations will be used.
+print('\n')
+ch = '#'
+BORDER = ch*200
+print(BOLD+PURPLE+BORDER+END)
+print('\n')
+
 try:
     operation = input("Which operation ('addition', 'subtraction', 'multiplication' or 'division') would you like to use? ")
 except ValueError:
@@ -16,78 +22,116 @@ except ValueError:
 if operation.lower() != 'addition' and operation.lower() != 'subtraction' and operation.lower() != 'multiplication' and operation.lower() != 'division':
     raise Exception(BOLD + RED +"Please only enter the qouted words among the choices."+ END)
 
-
+print('\n')
 #Ask the user to enter two (2) numbers.
 
 if operation.lower() == 'addition':
-    input1 = input("Enter your first number: ")
-    input2 = input("Enter your second number: ")
+    print(BOLD+BLUE+"Enter your first number:"+END)
+    input1 = input(" ")
+    print(BOLD+BLUE+"Enter your second number:"+END)
+    input2 = input(" ")
     result = float(input1) + float(input2)
     result = "%.3f"%result
-    print(BOLD + input1 ,"+",input2,"=", result + END)
+    print('\n')
+    print(input1 ,"+",input2,"=", result)
 
 elif operation.lower() == 'subtraction':
-    input1 = input("Enter your first number: ")
-    input2 = input("Enter your second number: ")
+    print(BOLD+BLUE+"Enter your first number:"+END)
+    input1 = input(" ")
+    print(BOLD+BLUE+"Enter your second number:"+END)
+    input2 = input(" ")
     result = float(input1) - float(input2)
     result = "%.3f"%result
-    print(BOLD + input1 ,"-",input2,"=", result + END)
+    print('\n')
+    print(input1 ,"-",input2,"=", result)
    
 
 elif operation.lower() == 'multiplication':
-    input1 = input("Enter your first number: ")
-    input2 = input("Enter your second number: ")
+    print(BOLD+BLUE+"Enter your first number:"+END)
+    input1 = input(" ")
+    print(BOLD+BLUE+"Enter your second number:"+END)
+    input2 = input(" ")
     result = float(input1) * int(input2)
     result = "%.3f"%result
-    print(BOLD + input1 ,"x",input2,"=", result + END)
+    print('\n')
+    print(input1 ,"x",input2,"=", result)
 
 if operation.lower() == 'division':
-    input1 = input("Enter your first number: ")
-    input2 = input("Enter your second number: ")
+    print(BOLD+BLUE+"Enter your first number:"+END)
+    input1 = input(" ")
+    print(BOLD+BLUE+"Enter your second number:"+END)
+    input2 = input(" ")
     result = float(input1) / float(input2)
     result = "%.3f"%result
-    print(BOLD + input1 ,"/",input2,"=", result + END)
+    print('\n')
+    print(input1 ,"/",input2,"=", result)
+
+print('\n')
+print(BOLD+PURPLE+BORDER+END)
 
 response = input("Would you like to repeat the process? Type'yes' to proceed, enter 'no' if not.")
 response.lower()
 
+
+
 #Ask the user if they want to repeat the process
 while response.lower() == 'yes':
+    print('\n')
     operation = input("Which operation ('addition', 'subtraction', 'multiplication' or 'division') would you like to use? ")
     operation.lower()
 
+    print('\n')
+
+
     if operation.lower() == 'addition':
-        input1 = input("Enter your first number: ")
-        input2 = input("Enter your second number: ")
+        print(BOLD+BLUE+"Enter your first number:"+END)
+        input1 = input(" ")
+        print(BOLD+BLUE+"Enter your second number:"+END)
+        input2 = input(" ")
         result = float(input1) + float(input2)
         result = "%.3f"%result
+        print('\n')
         print(BOLD + input1 ,"+",input2,"=", result + END)
         
 
     elif operation.lower() == 'subtraction':
-        input1 = input("Enter your first number: ")
-        input2 = input("Enter your second number: ")
+        print(BOLD+BLUE+"Enter your first number:"+END)
+        input1 = input(" ")
+        print(BOLD+BLUE+"Enter your second number:"+END)
+        input2 = input(" ")
         result = float(input1) - float(input2)
         result = "%.3f"%result
-        print(BOLD + input1 ,"-",input2,"=", result + END)
+        print('\n')
+        print(BOLD + (input1 ,"-",input2,"=", result) + END)
         
 
     elif operation.lower() == 'multiplication':
-        input1 = input("Enter your first number: ")
-        input2 = input("Enter your second number: ")
+        print(BOLD+BLUE+"Enter your first number:"+END)
+        input1 = input(" ")
+        print(BOLD+BLUE+"Enter your second number:"+END)
+        input2 = input(" ")
         result = float(input1) * float(input2)
         result = "%.3f"%result
-        print(BOLD + input1 ,"x",input2,"=", result + END)
+        print('\n')
+        print(input1 ,"x",input2,"=", result)
 
     if operation.lower() == 'division':
-        input1 = input("Enter your first number: ")
-        input2 = input("Enter your second number: ")
+        print(BOLD+BLUE+"Enter your first number:"+END)
+        input1 = input(" ")
+        print(BOLD+BLUE+"Enter your second number:"+END)
+        input2 = input(" ")
         result = float(input1) / float(input2)
         result = "%.3f"%result
-        print(BOLD + input1 ,"/",input2,"=", result + END)   
+        print('\n')
+        print(input1 ,"/",input2,"=", result)   
     
     response = input("Would you like to repeat the process? Type'yes' to proceed, enter 'no' if not.")
     response.lower()
+
+    print('\n')
+    print(BOLD+PURPLE+BORDER+END)
+    print('\n')
+    
 
     if response.lower() == 'no':
         print("End program")
