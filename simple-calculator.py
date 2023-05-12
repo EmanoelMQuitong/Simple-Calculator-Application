@@ -265,15 +265,8 @@ while response.lower() == 'yes':
     print('\n')
     
 
-    if response.lower() == 'no':
-        print(GREEN+"End of program")
-        history.close()
-    if response.lower() != 'yes' and response.lower() != 'no':
-        raise Exception(BOLD + RED +"Please only enter the qouted words among the choices."+ END) 
-    
-
 if response.lower() == 'no':
-    print(GREEN+"End of program")
+    print(GREEN+"End of program"+END)
     history.close()
 
 if response.lower() != 'yes' and response.lower() != 'no':
